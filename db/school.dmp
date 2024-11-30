@@ -1,0 +1,70 @@
+-- MySQL dump 10.9
+--
+-- Host: localhost    Database: shool
+-- ------------------------------------------------------
+-- Server version	4.1.12a-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `exam`
+--
+
+DROP TABLE IF EXISTS `exam`;
+CREATE TABLE `exam` (
+  `id` int(11) NOT NULL default '0',
+  `subject` varchar(128) NOT NULL default '',
+  `score` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`,`subject`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `exam`
+--
+
+
+/*!40000 ALTER TABLE `exam` DISABLE KEYS */;
+LOCK TABLES `exam` WRITE;
+INSERT INTO `exam` VALUES (1,'PC基礎',92),(1,'デザイン',77),(2,'PC基礎',51),(2,'デザイン',80),(3,'デザイン',74),(4,'PC基礎',85),(4,'デザイン',64);
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `exam` ENABLE KEYS */;
+
+--
+-- Table structure for table `student`
+--
+
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL default '0',
+  `name` varchar(128) NOT NULL default '',
+  `birthday` date NOT NULL default '0000-00-00',
+  `class` varchar(8) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `student`
+--
+
+
+/*!40000 ALTER TABLE `student` DISABLE KEYS */;
+LOCK TABLES `student` WRITE;
+INSERT INTO `student` VALUES (1,'佐藤 琢磨','1977-01-28','CG'),(2,'大塚 愛','1982-09-09','Web'),(3,'藤井 隆','1972-03-10','Web'),(4,'福原 愛','1988-11-01','CG'),(5,'大黒 将志','1980-05-04',NULL);
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
